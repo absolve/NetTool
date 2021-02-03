@@ -2,14 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.king.nettool">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permissions.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
-        android:allowBackup="true"
+        android:name=".MyApplication"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="${appName}"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NetTool">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.NetTool.NoActionBar"/>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="locale|mcc|mnc|keyboardHidden|orientation|screenSize|keyboard|navigation|fontScale|screenLayout|uiMode|touchscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
